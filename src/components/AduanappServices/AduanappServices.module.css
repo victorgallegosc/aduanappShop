@@ -1,0 +1,22 @@
+.titleBackground {
+    background-color: #ff4407;
+    border-radius: 30px;
+    height: fit-content;
+    max-width: 750px;
+    margin: 70px;
+}
+
+.title {
+    color: #ffffff;
+}
+
+.text {
+    color: #ffffff;
+}
+
+.titleContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    padding: 30px
+}

@@ -1,0 +1,46 @@
+@font-face {
+    font-family: 'Public Sans Medium';
+    src: url('./public_sans/fonts/otf/PublicSans-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Public Sans Regular';
+    src: url('./public_sans/fonts/otf/PublicSans-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Public Sans Thin';
+    src: url('./public_sans/fonts/otf/PublicSans-Thin.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Orbitron';
+    src: url('./Orbitron/static/Orbitron-Medium.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.font-body {
+    font-family: 'Public Sans Regular';
+    font-size: 13px;
+}
+
+.font-body-thin {
+    font-family: 'Public Sans Thin';
+    font-size: 13px;
+}
+
+.font-body-medium {
+    font-family: 'Public Sans Medium';
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.font-title {
+    font-family: 'Public Sans Medium';
+    font-weight: bold;
+    font-size: 40px;
+}
