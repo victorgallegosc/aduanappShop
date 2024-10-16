@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import KnowMoreButton from "./KnowMoreButton";
 import styles from "./ServicePack.module.css";
 import icon1 from "../../../../assets/icons/icon1.svg";
@@ -15,7 +14,8 @@ interface ServicePackProps {
     borderColor: string
     icon: string,
     text: string,
-    price: string
+    price: string,
+    packNumber: number
 }
 
 const icons: { [key: string]: string } = {
@@ -29,16 +29,11 @@ const icons: { [key: string]: string } = {
     "8": icon8,
 };
 
-const ServicePack: React.FC<ServicePackProps> = ({borderColor, icon, text, price}) => {
-    const navigate = useNavigate();
-    const handleClick = () => {
-        navigate('/details')
-    }
+const ServicePack: React.FC<ServicePackProps> = ({borderColor, icon, text, price, packNumber}) => {
     return (
         <div
             className={styles.servicePack}
             style={{ borderColor: borderColor }}
-            onClick={handleClick}
         >
             <img
                 className={styles.packLogo}
@@ -46,7 +41,7 @@ const ServicePack: React.FC<ServicePackProps> = ({borderColor, icon, text, price
             ></img>
             <p className="font-body-medium">{text}</p>
             <p className="font-body-thin">${price}</p>
-            <KnowMoreButton />
+            <KnowMoreButton packNumber={packNumber}/>
         </div>
     );
 };
