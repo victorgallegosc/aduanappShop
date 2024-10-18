@@ -27,10 +27,11 @@ li {
 }
 .imageDiv {
   background-image: url("../../../assets/img/pack1.png");
-  background-size: auto;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  margin-top: -1px;
   margin-bottom: 130px;
   height: 400px;
   width: 100%;
