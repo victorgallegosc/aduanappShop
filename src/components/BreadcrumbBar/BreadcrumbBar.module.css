@@ -1,0 +1,19 @@
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin-left: 90px;
+    margin-bottom: 30px;
+}
+
+.breadcrumbItem {
+    text-decoration: none;
+    color: #212121;
+}
+
+.separator {
+    margin: 0 5px;
+}
+
+.active {
+    text-decoration: underline;
+}
