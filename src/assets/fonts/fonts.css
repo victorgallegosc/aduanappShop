@@ -17,8 +17,8 @@
     font-style: normal;
 }
 @font-face {
-    font-family: 'Orbitron';
-    src: url('./Orbitron/static/Orbitron-Medium.ttf') format('opentype');
+    font-family: 'Oswald Bold';
+    src: url('./oswald/static/Oswald-Bold.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
@@ -40,7 +40,6 @@
 }
 
 .font-title {
-    font-family: 'Public Sans Medium';
-    font-weight: bold;
-    font-size: 40px;
+    font-family: 'Oswald Bold';
+    font-size: 50px;
 }

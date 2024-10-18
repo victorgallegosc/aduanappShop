@@ -6,12 +6,16 @@ import Breadcrumb from "../../../components/BreadcrumbBar";
 // En este componente, aparece una linea blanca de 1px entre el Header y este componente
 
 const Pack1Details: React.FC = () => {
+
+    // --- Tables data ---
+    // Breadcrumb
     const breadcrumbItems = [
         { label: "Home", link: "http://www.aduanapp.com" },
         { label: "Shop", link: "/" },
         { label: "Mi Primera Importacion", link: "/details1" },
     ];
 
+    // Basic Services
     const basicServices = [
         {
             title: "Padrón de importadores",
@@ -74,6 +78,7 @@ const Pack1Details: React.FC = () => {
         },
     ];
 
+    // Additional Services
     const additionalServices = [
         {
             title: "*Padrón sectorial",
@@ -102,16 +107,32 @@ const Pack1Details: React.FC = () => {
         },
     ];
 
+    // Minimum Pay
+    const minimumPay = [
+        {
+            title: "Servicios Estándar",
+            description: "$6,840 + IVA"
+        },
+        {
+            title: "Servicios Estándar y Adicionales",
+            description: "$14,040 + IVA"
+        }
+    ]
+
     return (
         <>
+            {/* Image and icon */}
             <div className={styles.imageDiv}>
                 <div className={styles.iconDiv}>
                     <img src={icon} style={{ width: "150px" }}></img>
                 </div>
+                <div className={styles.colorBar}></div>
             </div>
 
+            {/* Breadcrumb Bar */}
             <Breadcrumb items={breadcrumbItems} />
 
+            {/* Service Information */}
             <div className={styles.container}>
                 <h1 className="font-title" style={{ marginBottom: "10px" }}>
                     MI PRIMERA IMPORTACIÓN
@@ -164,26 +185,25 @@ const Pack1Details: React.FC = () => {
                     <li>Minimizando los gastos variables.</li>
                 </ul>
 
-                {/* En esta lista, cambiar <strong> por una fuente bold */}
                 <h2>Beneficios</h2>
                 <ul>
                     <li>
-                        <strong> Reducción de Riesgos:</strong> Evita multas,
+                        <span className="font-body-medium">Reducción de Riesgos:</span> Evita multas,
                         demoras o confiscaciones al cumplir con todas las
                         normativas aduaneras desde el inicio.
                     </li>
                     <li>
-                        <strong>Optimización de Costos:</strong> Asegura el pago
+                        <span className="font-body-medium">Optimización de Costos:</span> Asegura el pago
                         correcto de impuestos y evita sobrecostos logísticos
                         innecesarios.
                     </li>
                     <li>
-                        <strong>Tranquilidad:</strong> Confía en que tu primera
+                        <span className="font-body-medium">Tranquilidad:</span> Confía en que tu primera
                         importación será manejada por expertos, lo que te
                         permite enfocarte en otras áreas de tu negocio.
                     </li>
                     <li>
-                        <strong>Aprendizaje:</strong> Adquiere conocimientos
+                        <span className="font-body-medium">Aprendizaje:</span> Adquiere conocimientos
                         fundamentales sobre importaciones que te servirán para
                         futuras operaciones.
                     </li>
@@ -196,12 +216,13 @@ const Pack1Details: React.FC = () => {
                 </p>
 
                 <h2>Entregables</h2>
+                {/* Standard Services Table */}
                 <div style={{ marginBottom: "50px" }}>
                     <div
                         className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div
-                            className={styles.serviceTitle}
+                            className={[styles.serviceTitle, "font-body-medium"].join(" ")}
                             style={{
                                 borderBottom: "1px solid #ff4407",
                                 paddingBottom: "5px",
@@ -210,7 +231,7 @@ const Pack1Details: React.FC = () => {
                             Servicios Estandar
                         </div>
                         <div
-                            className={styles.serviceDescription}
+                            className={[styles.serviceDescription, "font-body-medium"].join(" ")}
                             style={{ borderBottom: "1px solid #ff4407" }}
                         >
                             Descripción
@@ -233,12 +254,13 @@ const Pack1Details: React.FC = () => {
                     ))}
                 </div>
 
+                {/* Additional Services Table */}
                 <div style={{ marginBottom: "50px" }}>
                     <div
                         className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div
-                            className={styles.serviceTitle}
+                            className={[styles.serviceTitle, "font-body-medium"].join(" ")}
                             style={{
                                 borderBottom: "1px solid #ff4407",
                                 paddingBottom: "5px",
@@ -247,7 +269,7 @@ const Pack1Details: React.FC = () => {
                             Servicios Adicionales
                         </div>
                         <div
-                            className={styles.serviceDescription}
+                            className={[styles.serviceDescription, "font-body-medium"].join(" ")}
                             style={{ borderBottom: "1px solid #ff4407" }}
                         >
                             Descripción
@@ -269,6 +291,50 @@ const Pack1Details: React.FC = () => {
                         </div>
                     ))}
                 </div>
+
+                {/* Minimum Payment */}
+                <div style={{ marginBottom: "50px" }}>
+                    <div
+                        className={[styles.serviceItem, "font-body"].join(" ")}
+                    >
+                        <div
+                            className="font-body-medium"
+                            style={{
+                                borderBottom: "1px solid #ff4407",
+                                paddingBottom: "5px",
+                                width: "100%"
+                            }}
+                        >
+                            Pago mínimo solicitado
+                        </div>
+                    </div>
+                    {minimumPay.map((service, index) => (
+                        <div
+                            key={index}
+                            className={[styles.serviceItem, "font-body"].join(
+                                " "
+                            )}
+                        >
+                            <div className={styles.serviceTitle}>
+                                {service.title}
+                            </div>
+                            <div
+                                className={[
+                                    styles.serviceDescription,
+                                    "font-body-medium"
+                                ].join(" ")}>
+                                {service.description}
+                            </div>
+                        </div>
+                    ))}
+                </div>
+
+                {/* Buttons */}
+                <div className="back-and-continue-button">
+                    <div className="secondary-button font-body">Atrás</div>
+                    <div className="primary-button font-body">Continuar</div>
+                </div>
+
             </div>
         </>
     );

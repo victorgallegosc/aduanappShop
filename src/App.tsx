@@ -14,25 +14,25 @@ import Pack8Details from './pages/PackDetails/pack8/pack8';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 const App: React.FC = () => {
-  return (
-      <Router>
-          <div>
-              <Header />
-              <Routes>
-                  <Route path="/" element={<AduanappServices />} />
-                  <Route path="/details1" element={<Pack1Details />} />
-                  <Route path="/details2" element={<Pack2Details />} />
-                  <Route path="/details3" element={<Pack3Details />} />
-                  <Route path="/details4" element={<Pack4Details />} />
-                  <Route path="/details5" element={<Pack5Details />} />
-                  <Route path="/details6" element={<Pack6Details />} />
-                  <Route path="/details7" element={<Pack7Details />} />
-                  <Route path="/details8" element={<Pack8Details />} />
-              </Routes>
-              <Footer />
-          </div>
-      </Router>
-  );
+    return (
+        <Router>
+            <div>
+                <Header />
+                <Routes>
+                    <Route path="/" element={<AduanappServices />} />
+                    <Route path="/details1" element={<Pack1Details />} />
+                    <Route path="/details2" element={<Pack2Details />} />
+                    <Route path="/details3" element={<Pack3Details />} />
+                    <Route path="/details4" element={<Pack4Details />} />
+                    <Route path="/details5" element={<Pack5Details />} />
+                    <Route path="/details6" element={<Pack6Details />} />
+                    <Route path="/details7" element={<Pack7Details />} />
+                    <Route path="/details8" element={<Pack8Details />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;

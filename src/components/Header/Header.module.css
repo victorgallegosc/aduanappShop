@@ -1,20 +1,20 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #ff4407;
-    padding: 10px 20px;
-    color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff4407;
+  padding: 10px 20px;
+  color: #ffffff;
 }
 
 .logo {
-    width: 200px;
+  width: 200px;
 }
 
 .contact {
-    text-align: right;
+  text-align: right;
 }
 
 .contact p {
-    margin: 2px;
+  margin: 2px;
 }

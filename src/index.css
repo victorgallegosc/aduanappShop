@@ -1,7 +1,35 @@
-html, body {
-    margin: 0;
+html,
+body {
+  margin: 0;
+}
+body p {
+  margin: 0;
+}
+.primary-button {
+  background-color: #ff4407;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  text-align: center;
+  height: fit-content;
+  padding: 7px 0px;
+  width: 150px;
 }
 
-body p {
-    margin: 0;
+.secondary-button {
+  background-color: gray;
+  border: none;
+  border-radius: 30px;
+  color: #ffffff;
+  text-align: center;
+  height: fit-content;
+  padding: 7px 0px;
+  width: 150px;
+}
+
+.back-and-continue-button {
+  display: flex;
+  flex-direction: row;
+  column-gap: 20px;
+  width: fit-content;
 }
