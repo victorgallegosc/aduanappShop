@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom"
 import styles from "./Pack1Details.module.css"
 import icon from "../../../assets/icons/icon1.svg"
 import Breadcrumb from "../../../components/BreadcrumbBar";
@@ -6,6 +7,11 @@ import Breadcrumb from "../../../components/BreadcrumbBar";
 // En este componente, aparece una linea blanca de 1px entre el Header y este componente
 
 const Pack1Details: React.FC = () => {
+
+    const navigate = useNavigate();
+    const goBack = () => {
+        navigate(-1);
+    }
 
     // --- Tables data ---
     // Breadcrumb
@@ -103,7 +109,7 @@ const Pack1Details: React.FC = () => {
         {
             title: "*Gestión naviera",
             description:
-                "Revisión, comunicación y gestión cuando naviera permita en caso de no ser consignatarios o representate directo para disputas , retornos de vacío, garantías.",
+                "Revisión, comunicación y gestión cuando naviera permita en caso de no ser consignatarios o representante directo para disputas, retornos de vacío, garantías.",
         },
     ];
 
@@ -331,7 +337,7 @@ const Pack1Details: React.FC = () => {
 
                 {/* Buttons */}
                 <div className="back-and-continue-button">
-                    <div className="secondary-button font-body">Atrás</div>
+                    <div className="secondary-button font-body" onClick={goBack}>Atrás</div>
                     <div className="primary-button font-body">Continuar</div>
                 </div>
 
