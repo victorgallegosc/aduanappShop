@@ -9,6 +9,9 @@ const Pack6Details: React.FC = () => {
     const goBack = () => {
         navigate(-1);
     };
+    const handleClick = () => {
+        navigate("/information-portal");
+    };
 
     // --- Tables data ---
     // Basic Services
@@ -208,7 +211,12 @@ const Pack6Details: React.FC = () => {
                     >
                         Atrás
                     </div>
-                    <div className="primary-button font-body">Continuar</div>
+                    <div
+                        className="primary-button font-body"
+                        onClick={handleClick}
+                    >
+                        Continuar
+                    </div>
                 </div>
             </div>
         </>

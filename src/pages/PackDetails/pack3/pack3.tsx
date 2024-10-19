@@ -9,6 +9,9 @@ const Pack3Details: React.FC = () => {
     const goBack = () => {
         navigate(-1);
     };
+    const handleClick = () => {
+        navigate("/information-portal");
+    };
 
     // --- Table data ---
     const services = [
@@ -246,15 +249,11 @@ const Pack3Details: React.FC = () => {
                             Pago mínimo solicitado
                         </div>
                     </div>
-                    
+
                     <div
-                        className={[styles.serviceItem, "font-body"].join(
-                            " "
-                        )}
+                        className={[styles.serviceItem, "font-body"].join(" ")}
                     >
-                        <div className={styles.serviceTitle}>
-                            Servicios
-                        </div>
+                        <div className={styles.serviceTitle}>Servicios</div>
                         <div
                             className={[
                                 styles.serviceDescription,
@@ -274,7 +273,12 @@ const Pack3Details: React.FC = () => {
                     >
                         Atrás
                     </div>
-                    <div className="primary-button font-body">Continuar</div>
+                    <div
+                        className="primary-button font-body"
+                        onClick={handleClick}
+                    >
+                        Continuar
+                    </div>
                 </div>
             </div>
         </>

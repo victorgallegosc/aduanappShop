@@ -9,6 +9,9 @@ const Pack2Details: React.FC = () => {
     const goBack = () => {
         navigate(-1);
     };
+    const handleClick = () => {
+        navigate("/information-portal");
+    };
     
     // Breadcrumb
     const breadcrumbItems = [
@@ -148,17 +151,16 @@ const Pack2Details: React.FC = () => {
                             Descripción
                         </div>
                     </div>
-                    
+
                     <div
-                        className={[styles.serviceItem, "font-body"].join(
-                            " "
-                        )}
+                        className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div className={styles.serviceTitle}>
                             Servicio Comparativo
                         </div>
                         <div className={styles.serviceDescription}>
-                            Entregable de reporte comparativo y opinión de una mejor práctica.
+                            Entregable de reporte comparativo y opinión de una
+                            mejor práctica.
                         </div>
                     </div>
                 </div>
@@ -179,15 +181,11 @@ const Pack2Details: React.FC = () => {
                             Pago total solicitado
                         </div>
                     </div>
-                    
+
                     <div
-                        className={[styles.serviceItem, "font-body"].join(
-                            " "
-                        )}
+                        className={[styles.serviceItem, "font-body"].join(" ")}
                     >
-                        <div className={styles.serviceTitle}>
-                            Servicios
-                        </div>
+                        <div className={styles.serviceTitle}>Servicios</div>
                         <div
                             className={[
                                 styles.serviceDescription,
@@ -207,7 +205,12 @@ const Pack2Details: React.FC = () => {
                     >
                         Atrás
                     </div>
-                    <div className="primary-button font-body">Continuar</div>
+                    <div
+                        className="primary-button font-body"
+                        onClick={handleClick}
+                    >
+                        Continuar
+                    </div>
                 </div>
             </div>
         </>
