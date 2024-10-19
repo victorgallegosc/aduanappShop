@@ -35,13 +35,10 @@ const ServicePack: React.FC<ServicePackProps> = ({borderColor, icon, text, price
             className={styles.servicePack}
             style={{ borderColor: borderColor }}
         >
-            <img
-                className={styles.packLogo}
-                src={icons[icon]}
-            ></img>
-            <p className="font-body-medium">{text}</p>
+            <img className={styles.packLogo} src={icons[icon]}></img>
+            <p className="font-body-bold">{text}</p>
             <p className="font-body-thin">${price}</p>
-            <KnowMoreButton packNumber={packNumber}/>
+            <KnowMoreButton packNumber={packNumber} />
         </div>
     );
 };

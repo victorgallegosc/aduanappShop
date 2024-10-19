@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
 
             <div className={styles.infoBlock} style={{ marginTop: "-3px" }}>
                 <p
-                    className="font-body-medium"
+                    className="font-body-bold"
                     style={{ fontSize: "14px", marginBottom: "15px" }}
                 >
                     Quick Links

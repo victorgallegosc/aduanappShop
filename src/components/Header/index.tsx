@@ -6,7 +6,7 @@ const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <img src={logo} alt="Aduanapp Logo" className={styles.logo}></img>
-            <div className={["font-body-medium", styles.contact].join(" ")}>
+            <div className={["font-body-bold", styles.contact].join(" ")}>
                 <p>MX</p>
                 <p>+52 56 3836 3290</p>
                 <p>notificaciones@aduanapp.mx</p>

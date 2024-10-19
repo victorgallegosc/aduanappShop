@@ -4,8 +4,6 @@ import styles from "./Pack1Details.module.css"
 import icon from "../../../assets/icons/icon1.svg"
 import Breadcrumb from "../../../components/BreadcrumbBar";
 
-// En este componente, aparece una linea blanca de 1px entre el Header y este componente
-
 const Pack1Details: React.FC = () => {
 
     const navigate = useNavigate();
@@ -194,24 +192,29 @@ const Pack1Details: React.FC = () => {
                 <h2>Beneficios</h2>
                 <ul>
                     <li>
-                        <span className="font-body-medium">Reducción de Riesgos:</span> Evita multas,
-                        demoras o confiscaciones al cumplir con todas las
-                        normativas aduaneras desde el inicio.
+                        <span className="font-body-bold">
+                            Reducción de Riesgos:{" "}
+                        </span>
+                        Evita multas, demoras o confiscaciones al cumplir con
+                        todas las normativas aduaneras desde el inicio.
                     </li>
                     <li>
-                        <span className="font-body-medium">Optimización de Costos:</span> Asegura el pago
-                        correcto de impuestos y evita sobrecostos logísticos
-                        innecesarios.
+                        <span className="font-body-bold">
+                            Optimización de Costos:{" "}
+                        </span>
+                        Asegura el pago correcto de impuestos y evita
+                        sobrecostos logísticos innecesarios.
                     </li>
                     <li>
-                        <span className="font-body-medium">Tranquilidad:</span> Confía en que tu primera
-                        importación será manejada por expertos, lo que te
-                        permite enfocarte en otras áreas de tu negocio.
+                        <span className="font-body-bold">Tranquilidad: </span>
+                        Confía en que tu primera importación será manejada por
+                        expertos, lo que te permite enfocarte en otras áreas de
+                        tu negocio.
                     </li>
                     <li>
-                        <span className="font-body-medium">Aprendizaje:</span> Adquiere conocimientos
-                        fundamentales sobre importaciones que te servirán para
-                        futuras operaciones.
+                        <span className="font-body-bold">Aprendizaje: </span>
+                        Adquiere conocimientos fundamentales sobre importaciones
+                        que te servirán para futuras operaciones.
                     </li>
                 </ul>
 
@@ -228,7 +231,10 @@ const Pack1Details: React.FC = () => {
                         className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div
-                            className={[styles.serviceTitle, "font-body-medium"].join(" ")}
+                            className={[
+                                styles.serviceTitle,
+                                "font-body-bold",
+                            ].join(" ")}
                             style={{
                                 borderBottom: "1px solid #ff4407",
                                 paddingBottom: "5px",
@@ -237,7 +243,10 @@ const Pack1Details: React.FC = () => {
                             Servicios Estandar
                         </div>
                         <div
-                            className={[styles.serviceDescription, "font-body-medium"].join(" ")}
+                            className={[
+                                styles.serviceDescription,
+                                "font-body-bold",
+                            ].join(" ")}
                             style={{ borderBottom: "1px solid #ff4407" }}
                         >
                             Descripción
@@ -266,7 +275,10 @@ const Pack1Details: React.FC = () => {
                         className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div
-                            className={[styles.serviceTitle, "font-body-medium"].join(" ")}
+                            className={[
+                                styles.serviceTitle,
+                                "font-body-bold",
+                            ].join(" ")}
                             style={{
                                 borderBottom: "1px solid #ff4407",
                                 paddingBottom: "5px",
@@ -275,7 +287,10 @@ const Pack1Details: React.FC = () => {
                             Servicios Adicionales
                         </div>
                         <div
-                            className={[styles.serviceDescription, "font-body-medium"].join(" ")}
+                            className={[
+                                styles.serviceDescription,
+                                "font-body-bold",
+                            ].join(" ")}
                             style={{ borderBottom: "1px solid #ff4407" }}
                         >
                             Descripción
@@ -304,11 +319,11 @@ const Pack1Details: React.FC = () => {
                         className={[styles.serviceItem, "font-body"].join(" ")}
                     >
                         <div
-                            className="font-body-medium"
+                            className="font-body-bold"
                             style={{
                                 borderBottom: "1px solid #ff4407",
                                 paddingBottom: "5px",
-                                width: "100%"
+                                width: "100%",
                             }}
                         >
                             Pago mínimo solicitado
@@ -327,8 +342,9 @@ const Pack1Details: React.FC = () => {
                             <div
                                 className={[
                                     styles.serviceDescription,
-                                    "font-body-medium"
-                                ].join(" ")}>
+                                    "font-body-bold",
+                                ].join(" ")}
+                            >
                                 {service.description}
                             </div>
                         </div>
@@ -337,10 +353,14 @@ const Pack1Details: React.FC = () => {
 
                 {/* Buttons */}
                 <div className="back-and-continue-button">
-                    <div className="secondary-button font-body" onClick={goBack}>Atrás</div>
+                    <div
+                        className="secondary-button font-body"
+                        onClick={goBack}
+                    >
+                        Atrás
+                    </div>
                     <div className="primary-button font-body">Continuar</div>
                 </div>
-
             </div>
         </>
     );
