@@ -1,0 +1,58 @@
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  column-gap: 30px;
+  row-gap: 20px;
+  max-width: 900px;
+}
+
+.formContainer label,
+p {
+  font-family: "Public Sans Medium";
+  font-size: 13px;
+}
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+}
+
+.formField input {
+  border: 1px solid #ffad91;
+  border-radius: 3px;
+  padding: 5px 8px;
+  margin-top: 5px;
+  max-width: 330px;
+}
+
+.customFileButton {
+  background-color: white;
+  border: 1px solid #ffad91;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #212121;
+  padding: 5px 8px;
+  margin-top: 5px;
+  max-width: 150px;
+}
+
+::placeholder {
+  font-style: italic;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  font-style: italic;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  font-style: italic;
+}
+
+.errorMessage {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}

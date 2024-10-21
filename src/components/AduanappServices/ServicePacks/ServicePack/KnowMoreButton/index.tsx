@@ -6,10 +6,14 @@ interface KnowMoreButtonProps {
     packNumber: number;
 }
 
-const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({packNumber}) => {
+const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({ packNumber }) => {
+    const packName = [
+        'mi-primera-exportacion',
+        'comparativo-aduanas'
+    ]
     const navigate = useNavigate();
     const handleClick = () => {
-        navigate(`/details${packNumber}`);
+        navigate(`/${packName[packNumber - 1]}`);
     };
     return (
         <div className={styles.button} onClick={handleClick}>

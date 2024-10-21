@@ -23,15 +23,15 @@ const App: React.FC = () => {
                 <Routes>
                     <Route path="/" element={<AduanappServices />} />
                     <Route
-                        path="/information-portal"
+                        path="/information-portal/:packRoute"
                         element={<InformationPortal />}
                     />
                     <Route
-                        path="/documentation-portal"
+                        path="/documentation-portal/:packRoute/*"
                         element={<DocumentationPortal />}
                     />
-                    <Route path="/details1" element={<Pack1Details />} />
-                    <Route path="/details2" element={<Pack2Details />} />
+                    <Route path="/mi-primera-exportacion" element={<Pack1Details />} />
+                    <Route path="/comparativo-aduanas" element={<Pack2Details />} />
                     <Route path="/details3" element={<Pack3Details />} />
                     <Route path="/details4" element={<Pack4Details />} />
                     <Route path="/details5" element={<Pack5Details />} />

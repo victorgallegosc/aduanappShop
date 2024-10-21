@@ -5,13 +5,13 @@ import icon from "../../../assets/icons/icon1.svg"
 import Breadcrumb from "../../../components/BreadcrumbBar";
 
 const Pack1Details: React.FC = () => {
-
     const navigate = useNavigate();
     const goBack = () => {
         navigate(-1);
     }
     const handleClick = () => {
-        navigate('/information-portal')
+        const packRoute = 'mi-primera-exportacion';
+        navigate(`/information-portal/${packRoute}`)
     }
 
     // --- Tables data ---
@@ -19,7 +19,7 @@ const Pack1Details: React.FC = () => {
     const breadcrumbItems = [
         { label: "Home", link: "http://www.aduanapp.com" },
         { label: "Shop", link: "/" },
-        { label: "Mi Primera Importacion", link: "/details1" },
+        { label: "Mi Primera Importacion", link: "/mi-primera-exportacion" },
     ];
 
     // Basic Services

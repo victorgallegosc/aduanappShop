@@ -1,98 +1,39 @@
 .container {
-    border: 2px solid #ff4407;
-    border-radius: 10px;
-    margin: 50px 40px;
-    padding: 20px 30px;
+  border: 2px solid #ff4407;
+  border-radius: 10px;
+  margin: 50px 40px;
+  padding: 20px 30px;
 }
 
 .containerHeader {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    column-gap: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 30px;
 }
 
 .containerHeaderMessage {
-    background-color: #ff4407;
-    border-radius: 10px;
-    color: white;
-    padding: 10px;
-    margin-bottom: 20px;
-    height: fit-content;
-    width: fit-content;
+  background-color: #ff4407;
+  border-radius: 10px;
+  color: white;
+  padding: 10px;
+  margin-bottom: 20px;
+  height: fit-content;
+  width: fit-content;
 }
 
 .headerText {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 
-    font-family: "Public Sans Regular";
-    font-size: 14px;
-    margin-top: 0;
-    margin-bottom: 10px;
-    width: auto;
-    max-width: 400px;
+  font-family: "Public Sans Regular";
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  width: auto;
+  max-width: 400px;
 }
 
 .headerText h2 {
-    margin: 0;
-}
-
-.formContainer {
-    display: flex;
-    flex-direction: column;
-    column-gap: 30px;
-    row-gap: 20px;
-    max-width: 900px;
-}
-
-.formContainer label,
-p {
-    font-family: 'Public Sans Medium';
-    font-size: 13px;
-}
-
-.formField {
-    display: flex;
-    flex-direction: column;
-    width: auto;
-}
-
-.formField input {
-    border: 1px solid #ffad91;
-    border-radius: 3px;
-    padding: 5px 8px;
-    margin-top: 5px;
-    max-width: 330px;
-}
-
-.customFileButton {
-    background-color: white;
-    border: 1px solid #ffad91;
-    border-radius: 5px;
-    cursor: pointer;
-    color: #212121;
-    padding: 5px 8px;
-    margin-top: 5px;
-    max-width: 150px;
-}
-
-::placeholder {
-    font-style: italic;
-}
-
-:-ms-input-placeholder {
-    /* Internet Explorer 10-11 */
-    font-style: italic;
-}
-
-::-ms-input-placeholder {
-    /* Microsoft Edge */
-    font-style: italic;
-}
-
-.errorMessage {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+  margin: 0;
 }

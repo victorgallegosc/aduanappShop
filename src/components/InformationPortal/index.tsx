@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styles from "./InformationPortal.module.css"
 
 const InformationPortal: React.FC = () => {
+    const { packRoute } = useParams<{ packRoute: string }>();
+    console.log({ packRoute });
     const [formData, setFormData] = useState({
         nombre: "",
         correo: "",
@@ -28,6 +30,7 @@ const InformationPortal: React.FC = () => {
         e.preventDefault();
         // Send data to API
         console.log("Form Data:", formData);
+        navigate(`/documentation-portal/${packRoute}`);
     };
 
     const navigate = useNavigate()

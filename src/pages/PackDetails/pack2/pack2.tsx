@@ -10,14 +10,15 @@ const Pack2Details: React.FC = () => {
         navigate(-1);
     };
     const handleClick = () => {
-        navigate("/information-portal");
-    };
-    
+        const packRoute = 'comparativo-aduanas';
+        navigate(`/information-portal/${packRoute}`)
+    }
+
     // Breadcrumb
     const breadcrumbItems = [
         { label: "Home", link: "http://www.aduanapp.com" },
         { label: "Shop", link: "/" },
-        { label: "Comparativo aduanas", link: "/details2" },
+        { label: "Comparativo aduanas", link: "/comparativo-aduanas" },
     ];
 
     return (
