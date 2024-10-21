@@ -13,6 +13,7 @@ import Pack7Details from './pages/PackDetails/pack7/pack7';
 import Pack8Details from './pages/PackDetails/pack8/pack8';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import InformationPortal from './components/InformationPortal/index';
+import DocumentationPortal from './components/DocumentationPortal';
 
 const App: React.FC = () => {
     return (
@@ -21,7 +22,14 @@ const App: React.FC = () => {
                 <Header />
                 <Routes>
                     <Route path="/" element={<AduanappServices />} />
-                    <Route path="/information-portal" element={<InformationPortal />} />
+                    <Route
+                        path="/information-portal"
+                        element={<InformationPortal />}
+                    />
+                    <Route
+                        path="/documentation-portal"
+                        element={<DocumentationPortal />}
+                    />
                     <Route path="/details1" element={<Pack1Details />} />
                     <Route path="/details2" element={<Pack2Details />} />
                     <Route path="/details3" element={<Pack3Details />} />
