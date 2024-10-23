@@ -1,8 +1,5 @@
 @media (max-width: 480px) {
     .infoContainer {
-        /* padding-top: 70px;
-        padding-left: 130px;
-        padding-right: 130px; */
         column-gap: 30px;
         justify-content: space-around;
         min-height: 100px;
@@ -17,12 +14,22 @@
     }
 }
 
+@media (min-width: 920px) {
+    .infoContainer {
+        column-gap: 50px;
+        justify-content: start;
+        min-height: 100px;
+        margin-left: 150px;
+    }
+}
+
 .footer {
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #efefef;
     position: relative;
+    bottom: 0;
     height: 250px;
     width: 100%;
 }

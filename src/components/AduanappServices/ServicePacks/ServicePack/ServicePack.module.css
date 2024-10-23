@@ -1,3 +1,17 @@
+@media (min-width: 1220px) {
+    .servicePack {
+            height: 250px;
+            width: 230px;
+        }
+}
+
+@media (max-width: 1219px) {
+    .servicePack {
+        height: 220px;
+        width: 180px;
+    }
+}
+
 .servicePack {
     display: flex;
     flex-direction: column;
@@ -9,8 +23,6 @@
     border-style: solid;
     border-width: 2px;
     border-radius: 30px;
-    height: 220px;
-    width: 180px;
 }
 
 .packLogo {
