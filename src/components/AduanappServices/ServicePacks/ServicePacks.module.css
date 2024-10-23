@@ -1,23 +1,27 @@
 @media (max-width: 480px) {
     .servicePacksContainer {
+        margin: 20px auto;
         max-width: 90%;
     }
 }
 
 @media (min-width: 481px) and (max-width: 650px) {
     .servicePacksContainer {
+        margin: 20px auto;
         max-width: 80%;
     }
 }
 
-@media (min-width: 651px) {
+@media (min-width: 651px) and (max-width: 1023px) {
     .servicePacksContainer {
+        margin: 50px auto;
         max-width: 90%;
     }
 }
 
 @media (min-width: 1024px) {
     .servicePacksContainer {
+        margin: 50px auto;
         max-width: 840px;
     }
 }
@@ -28,5 +32,4 @@
     gap: 15px;
     justify-items: center;
     align-items: center;
-    margin: auto;
 }

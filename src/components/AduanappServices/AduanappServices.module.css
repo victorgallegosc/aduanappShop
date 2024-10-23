@@ -1,9 +1,3 @@
-@media (max-width: 768px) {
-    .titleContainer {
-        margin-bottom: 20px;
-    }
-}
-
 .titleBackground {
     background-color: #ff4407;
     height: fit-content;

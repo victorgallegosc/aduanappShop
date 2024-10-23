@@ -1,4 +1,26 @@
+@media (max-width: 480px) {
+    .infoContainer {
+        /* padding-top: 70px;
+        padding-left: 130px;
+        padding-right: 130px; */
+        column-gap: 30px;
+        justify-content: space-around;
+        min-height: 100px;
+    }
+}
+
+@media (min-width: 481px) {
+    .infoContainer {
+        column-gap: 50px;
+        justify-content: start;
+        min-height: 100px;
+    }
+}
+
 .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #efefef;
     position: relative;
     height: 250px;
@@ -8,13 +30,7 @@
 .infoContainer {
     display: flex;
     flex-direction: row;
-    column-gap: 50px;
-
-    padding-top: 70px;
-    padding-left: 130px;
-    padding-right: 130px;
-    height: 100px;
-    max-width: fit-content;
+    width: 90%;
 }
 
 .infoBlock {
