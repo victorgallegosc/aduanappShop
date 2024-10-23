@@ -26,7 +26,15 @@
     .servicePacksContainer {
         gap: 20px;
         margin: 50px auto;
-        max-width: 970px;
+        max-width: 900px;
+    }
+}
+
+@media (min-width: 1220px) {
+    .servicePacksContainer {
+        gap: 30px;
+        margin: 50px auto;
+        max-width: 980px;
     }
 }
 
