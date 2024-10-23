@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./Pack3Details.module.css";
 import icon from "../../../assets/icons/icon3.svg";
@@ -68,14 +68,31 @@ const Pack3Details: React.FC = () => {
         { label: "Conectándote", link: "/details3" },
     ];
 
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 720);
+        };
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
+    }, []);
+
     return (
         <>
             {/* Image and icon */}
             <div className={styles.imageDiv}>
                 <div className={styles.iconDiv}>
-                    <img src={icon} style={{ width: "150px" }}></img>
+                    {isMobile ? (
+                        <img src={icon} style={{ width: "100px" }}></img>
+                    ) : (
+                        <img src={icon} style={{ width: "150px" }}></img>
+                    )}
                 </div>
-                <div className={styles.colorBar}></div>
+                {!isMobile ? <div className={styles.colorBar}></div> : ""}
             </div>
 
             {/* Breadcrumb Bar */}
@@ -83,7 +100,7 @@ const Pack3Details: React.FC = () => {
 
             {/* Service Information */}
             <div className={styles.container}>
-                <h1 className="font-title" style={{ marginBottom: "10px" }}>
+                <h1 className={["font-title", styles.title].join(" ")}>
                     CONECTÁNDOTE
                 </h1>
                 <p

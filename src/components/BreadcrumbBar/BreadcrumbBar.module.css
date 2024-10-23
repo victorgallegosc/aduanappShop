@@ -1,8 +1,20 @@
+@media (max-width: 720px) {
+    .breadcrumb {
+        margin-left: 30px;
+        margin-right: 30px;
+    }
+}
+
+@media (min-width: 721px) {
+    .breadcrumb {
+        margin-left: 90px;
+    }
+}
+
 .breadcrumb {
     display: flex;
     align-items: center;
-    margin-left: 90px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .breadcrumbItem {
