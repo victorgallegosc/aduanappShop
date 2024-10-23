@@ -1,6 +1,32 @@
+@media (max-width: 480px) {
+    .servicePacksContainer {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 650px) {
+    .servicePacksContainer {
+        max-width: 80%;
+    }
+}
+
+@media (min-width: 651px) {
+    .servicePacksContainer {
+        max-width: 90%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .servicePacksContainer {
+        max-width: 840px;
+    }
+}
+
 .servicePacksContainer {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 15px;
-    margin: 0px 70px 70px 70px;
+    justify-items: center;
+    align-items: center;
+    margin: auto;
 }

@@ -1,9 +1,12 @@
+@media (max-width: 768px) {
+    .titleContainer {
+        margin-bottom: 20px;
+    }
+}
+
 .titleBackground {
     background-color: #ff4407;
-    border-radius: 30px;
     height: fit-content;
-    max-width: 750px;
-    margin: 70px;
 }
 
 .title {
@@ -17,6 +20,7 @@
 .titleContainer {
     display: flex;
     flex-direction: column;
-    row-gap: 30px;
-    padding: 30px
+
+    padding: 30px;
+    margin-top: -1px;
 }

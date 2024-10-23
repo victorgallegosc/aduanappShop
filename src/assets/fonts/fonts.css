@@ -23,6 +23,18 @@
     font-style: normal;
 }
 
+@media (max-width: 480px) {
+    .font-title {
+        font-size: 35px;
+    }
+}
+
+@media (min-width: 481px) {
+    .font-title {
+        font-size: 45px;
+    }
+}
+
 .font-body {
     font-family: 'Public Sans Regular';
     font-size: 13px;
@@ -40,5 +52,4 @@
 
 .font-title {
     font-family: 'Oswald Bold';
-    font-size: 50px;
 }

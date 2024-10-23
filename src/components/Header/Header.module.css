@@ -1,3 +1,15 @@
+@media (max-width: 480px) {
+  .logo {
+      width: 50px;
+    }
+}
+
+@media (min-width: 481px) {
+  .logo {
+      width: 200px;
+    }
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -5,10 +17,6 @@
   background-color: #ff4407;
   padding: 10px 20px;
   color: #ffffff;
-}
-
-.logo {
-  width: 200px;
 }
 
 .contact {
