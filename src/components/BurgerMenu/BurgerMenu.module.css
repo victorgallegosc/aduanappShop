@@ -51,12 +51,12 @@
 .menuTabs {
   display: flex;
   flex-direction: column;
-  font-family: "Publc Sans Regular";
   font-size: 25px;
   row-gap: 10px;
 }
 
 .menuTabs a {
+  font-family: "Public Sans Regular";
   border-top: 1px solid #ff9c7a;
   padding-top: 10px;
   text-decoration: none;

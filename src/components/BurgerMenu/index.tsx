@@ -35,7 +35,7 @@ const FullScreenBurgerMenu: React.FC = () => {
                             <a style={{
                                 borderBottom: "1px solid #ff9c7a",
                                 paddingBottom: "10px"
-                            }}>Contact</a>
+                            }}>Contacto</a>
                         </div>
                     </div>
                     <div className={["font-body-bold", styles.contact].join(" ")}>
