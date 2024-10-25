@@ -1,24 +1,24 @@
 import React, { useState } from 'react';
-import styles from "./BurgerMenu.module.css"
+import styles from "./BurgerMenu.module.css";
 import { useNavigate } from 'react-router-dom';
 
 const FullScreenBurgerMenu: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
-
-    const toggleMenu = () => {
-        setIsOpen(!isOpen);
-    };
-
     const navigate = useNavigate();
+
+    const toggleMenu = () => setIsOpen((prev) => !prev);
+
     const goToShop = () => {
         navigate('/');
-        setIsOpen(!isOpen);
-    }
+        toggleMenu();
+    };
+
     return (
         <div>
             <div
                 className={`${styles.burgerIcon} ${isOpen ? styles.open : ''}`}
-                onClick={toggleMenu}>
+                onClick={toggleMenu}
+            >
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
@@ -32,13 +32,10 @@ const FullScreenBurgerMenu: React.FC = () => {
                         <div className={styles.menuTabs}>
                             <a href='http://www.aduanapp.com'>Home</a>
                             <a onClick={goToShop}>Shop</a>
-                            <a style={{
-                                borderBottom: "1px solid #ff9c7a",
-                                paddingBottom: "10px"
-                            }}>Contacto</a>
+                            <a style={{ borderBottom: "1px solid #ff9c7a", paddingBottom: "10px" }}>Contacto</a>
                         </div>
                     </div>
-                    <div className={["font-body-bold", styles.contact].join(" ")}>
+                    <div className={`${styles.contact} font-body-bold`}>
                         <p>MX</p>
                         <p>+52 56 3836 3290</p>
                         <p>notificaciones@aduanapp.mx</p>

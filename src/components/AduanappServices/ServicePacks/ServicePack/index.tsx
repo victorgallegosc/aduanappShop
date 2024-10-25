@@ -11,13 +11,14 @@ import icon7 from "../../../../assets/icons/icon7.svg";
 import icon8 from "../../../../assets/icons/icon8.svg";
 
 interface ServicePackProps {
-    borderColor: string
-    icon: string,
-    text: string,
-    price: string,
-    packNumber: number
+    borderColor: string;
+    icon: string;
+    text: string;
+    price: string;
+    packNumber: number;
 }
 
+// Mapping of icon identifiers to their respective SVG paths
 const icons: { [key: string]: string } = {
     "1": icon1,
     "2": icon2,
@@ -29,13 +30,12 @@ const icons: { [key: string]: string } = {
     "8": icon8,
 };
 
-const ServicePack: React.FC<ServicePackProps> = ({borderColor, icon, text, price, packNumber}) => {
+const ServicePack: React.FC<ServicePackProps> = (
+    { borderColor, icon, text, price, packNumber }
+) => {
     return (
-        <div
-            className={styles.servicePack}
-            style={{ borderColor: borderColor }}
-        >
-            <img className={styles.packLogo} src={icons[icon]}></img>
+        <div className={styles.servicePack} style={{ borderColor }}>
+            <img className={styles.packLogo} src={icons[icon]} alt={`Icon for ${text}`} />
             <p className="font-body-bold">{text}</p>
             <p className="font-body-thin">${price}</p>
             <KnowMoreButton packNumber={packNumber} />

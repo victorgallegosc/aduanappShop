@@ -6,7 +6,7 @@ interface KnowMoreButtonProps {
     packNumber: number;
 }
 
-const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({packNumber}) => {
+const KnowMoreButton: React.FC<KnowMoreButtonProps> = ({ packNumber }) => {
     const navigate = useNavigate();
     const handleClick = () => {
         navigate(`/details${packNumber}`);
