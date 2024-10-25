@@ -56,9 +56,7 @@ const InformationPortal: React.FC = () => {
                         ¡Ya casi, 2 pasos más y terminamos!
                     </p>
                 </div>
-            ) : (
-                ""
-            )}
+            ) : ("")}
             <div className={styles.container}>
                 {isMobile ? (
                     <form
@@ -122,24 +120,49 @@ const InformationPortal: React.FC = () => {
                         </div>
                         <div className={styles.formField}>
                             <label>Tipo de Servicio*</label>
-                            <input
-                                name="tipoDeServicio"
-                                type="text"
-                                placeholder="Importación o Exportación"
-                                value={formData.tipoDeServicio}
-                                onChange={handleChange}
-                                required
-                            />
+                            <div className={styles.border}>
+                                <label style={{ fontFamily: "Public Sans Thin" }}>
+                                    <input
+                                        name="tipoDeServicio"
+                                        type="radio"
+                                        value="importacion"
+                                        onChange={handleChange}
+                                    />
+                                    Importación
+                                </label>
+                                <label style={{ fontFamily: "Public Sans Thin" }}>
+                                    <input
+                                        name="tipoDeServicio"
+                                        type="radio"
+                                        value="exportacion"
+                                        onChange={handleChange}
+                                    />
+                                    Exportación
+                                </label>
+                            </div>
                         </div>
                         <div className={styles.formField}>
                             <label>Tipo de Persona (opcional)</label>
-                            <input
-                                name="persona"
-                                type="text"
-                                placeholder="Moral o Física"
-                                value={formData.persona}
-                                onChange={handleChange}
-                            />
+                            <div className={styles.border}>
+                                <label style={{ fontFamily: "Public Sans Thin" }}>
+                                    <input
+                                        name="persona"
+                                        type="radio"
+                                        value="fisica"
+                                        onChange={handleChange}
+                                    />
+                                    Persona Física
+                                </label>
+                                <label style={{ fontFamily: "Public Sans Thin" }}>
+                                    <input
+                                        name="persona"
+                                        type="radio"
+                                        value="moral"
+                                        onChange={handleChange}
+                                    />
+                                    Persona Moral
+                                </label>
+                            </div>
                         </div>
                         <div className={styles.formField}>
                             <label>Tipo de aduana (opcional)</label>
@@ -203,7 +226,6 @@ const InformationPortal: React.FC = () => {
                             onSubmit={handleSubmit}
                         >
                             <div className={styles.formField}>
-                                <h2>Informacion requerida*</h2>
                                 <label>Nombre*</label>
                                 <input
                                     name="nombre"
@@ -259,24 +281,49 @@ const InformationPortal: React.FC = () => {
                             </div>
                             <div className={styles.formField}>
                                 <label>Tipo de Servicio*</label>
-                                <input
-                                    name="tipoDeServicio"
-                                    type="text"
-                                    placeholder="Importación o Exportación"
-                                    value={formData.tipoDeServicio}
-                                    onChange={handleChange}
-                                    required
-                                />
+                                <div className={styles.border}>
+                                    <label style={{ fontFamily: "Public Sans Thin" }}>
+                                        <input
+                                            name="tipoDeServicio"
+                                            type="radio"
+                                            value="importacion"
+                                            onChange={handleChange}
+                                        />
+                                        Importación
+                                    </label>
+                                    <label style={{ fontFamily: "Public Sans Thin" }}>
+                                        <input
+                                            name="tipoDeServicio"
+                                            type="radio"
+                                            value="exportacion"
+                                            onChange={handleChange}
+                                        />
+                                        Exportación
+                                    </label>
+                                </div>
                             </div>
                             <div className={styles.formField}>
                                 <label>Tipo de Persona (opcional)</label>
-                                <input
-                                    name="persona"
-                                    type="text"
-                                    placeholder="Moral o Física"
-                                    value={formData.persona}
-                                    onChange={handleChange}
-                                />
+                                <div className={styles.border}>
+                                    <label style={{ fontFamily: "Public Sans Thin" }}>
+                                        <input
+                                            name="persona"
+                                            type="radio"
+                                            value="fisica"
+                                            onChange={handleChange}
+                                        />
+                                        Persona Física
+                                    </label>
+                                    <label style={{ fontFamily: "Public Sans Thin" }}>
+                                        <input
+                                            name="persona"
+                                            type="radio"
+                                            value="moral"
+                                            onChange={handleChange}
+                                        />
+                                        Persona Moral
+                                    </label>
+                                </div>
                             </div>
                             <div className={styles.formField}>
                                 <label>Tipo de aduana (opcional)</label>
