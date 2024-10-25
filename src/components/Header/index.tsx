@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import styles from "./Header.module.css";
 import logo from "../../assets/logo-blanco.svg";
 import shortlogo from "../../assets/short-logo-blanco.svg"
+import BurgerMenu from "../BurgerMenu";
 
 const Header: React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -16,26 +17,28 @@ const Header: React.FC = () => {
             window.removeEventListener("resize", handleResize);
         };
     }, []);
-    
+
     return (
         <header className={styles.header}>
             {isMobile ? (
-            <img
-                src={shortlogo}
-                alt="Aduanapp Logo"
-                className={styles.logo}
-            ></img>
+                <img
+                    src={shortlogo}
+                    alt="Aduanapp Logo"
+                    className={styles.logo}
+                ></img>
             ) :
-            <img
-                src={logo}
-                alt="Aduanapp Logo"
-                className={styles.logo}
-            ></img>}
-            <div className={["font-body-bold", styles.contact].join(" ")}>
-                <p>MX</p>
-                <p>+52 56 3836 3290</p>
-                <p>notificaciones@aduanapp.mx</p>
-            </div>
+                <img
+                    src={logo}
+                    alt="Aduanapp Logo"
+                    className={styles.logo}
+                ></img>}
+            {isMobile ? <BurgerMenu /> : (
+                <div className={["font-body-bold", styles.contact].join(" ")}>
+                    <p>MX</p>
+                    <p>+52 56 3836 3290</p>
+                    <p>notificaciones@aduanapp.mx</p>
+                </div>
+            )}
         </header>
     );
 };

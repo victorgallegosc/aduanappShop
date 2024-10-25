@@ -1,0 +1,70 @@
+.burgerIcon {
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 30px;
+  z-index: 1000;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  transition: all 0.3s ease;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%;
+  height: 100%;
+  background-color: #ff4407;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.menu.open {
+  right: 0;
+}
+
+.closeButton {
+  font-size: 4rem;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+.menuContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  width: 90%;
+}
+
+.menuTabs {
+  display: flex;
+  flex-direction: column;
+  font-family: "Publc Sans Regular";
+  font-size: 25px;
+  row-gap: 10px;
+}
+
+.menuTabs a {
+  border-top: 1px solid #ff9c7a;
+  padding-top: 10px;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.contact {
+  font-size: 15px;
+  padding-bottom: 50px;
+}
