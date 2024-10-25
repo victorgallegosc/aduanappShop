@@ -355,6 +355,22 @@ const InformationPortal: React.FC = () => {
                                     onChange={handleChange}
                                 />
                             </div>
+
+                            {/* Buttons */}
+                            <div className="back-and-continue-button">
+                                <div
+                                    className="secondary-button font-body"
+                                    onClick={goBack}
+                                >
+                                    Atrás
+                                </div>
+                                <button
+                                    className="primary-button font-body"
+                                    type="submit"
+                                >
+                                    Continuar
+                                </button>
+                            </div>
                         </form>
                     </>
                 )}
