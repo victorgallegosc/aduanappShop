@@ -11,14 +11,26 @@ import Pack5Details from "./pages/PackDetails/pack5/pack5";
 import Pack6Details from "./pages/PackDetails/pack6/pack6";
 import Pack7Details from "./pages/PackDetails/pack7/pack7";
 import Pack8Details from "./pages/PackDetails/pack8/pack8";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import InformationPortal from "./components/InformationPortal/index";
+import { useEffect } from "react";
+
+const ScrollToTop: React.FC = () => {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+};
 
 const App: React.FC = () => {
     return (
         <Router>
             <div id="root">
                 <Header />
+                <ScrollToTop />
                 <main>
                     <Routes>
                         <Route path="/" element={<AduanappServices />} />
