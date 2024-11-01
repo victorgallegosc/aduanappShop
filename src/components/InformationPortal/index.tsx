@@ -1,319 +1,159 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./InformationPortal.module.css"
+import styles from "./InformationPortal.module.css";
+
+// Define the keys for the form data type
+type FormDataKeys = keyof typeof initialFormData;
+
+// Initial state for the form data
+const initialFormData = {
+    Customer: "",
+    Email: "",
+    apellido: "",
+    Phone: "",
+    TaxId: "",
+    CustomCode: "",
+    ServiceType: "",
+    Country: "",
+    PersonType: "",
+    HSCode: "",
+};
 
 const InformationPortal: React.FC = () => {
-    const [formData, setFormData] = useState({
-        nombre: "",
-        correo: "",
-        apellido: "",
-        telefono: "",
-        rfc: "",
-        tipoDeAduana: "",
-        tipoDeServicio: "",
-        origen: "",
-        persona: "",
-        codigo: "",
-    });
+    const [formData, setFormData] = useState(initialFormData);
+    const [isMobile, setIsMobile] = useState(false);
+    const navigate = useNavigate();
 
+    // Update form data on input change
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setFormData({
-            ...formData,
-            [name]: value,
-        });
+        setFormData((prevData) => ({ ...prevData, [name as FormDataKeys]: value }));
     };
 
+    // Handle form submission
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        // Send data to API
+
+        if (!formData.ServiceType) {
+            alert("Por favor, selecciona un tipo de servicio.");
+            return;
+        }
+        if (!formData.PersonType) {
+            alert("Por favor, selecciona un tipo de persona.");
+            return;
+        }
+
         console.log("Form Data:", formData);
     };
 
-    const navigate = useNavigate()
-    const goBack = () => {
-        navigate(-1);
-    }
 
-    const [isMobile, setIsMobile] = useState(false);
+    // Navigate back to the previous page
+    const goBack = () => navigate(-1);
 
+    // Check if the view is mobile based on window width
     useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 720);
-        };
+        const handleResize = () => setIsMobile(window.innerWidth <= 720);
         handleResize();
         window.addEventListener("resize", handleResize);
-        return () => {
-            window.removeEventListener("resize", handleResize);
-        };
+        return () => window.removeEventListener("resize", handleResize);
     }, []);
+
+    // Render the form
+    const renderForm = () => (
+        <form
+            className={isMobile ? styles.formContainerMbl : styles.formContainer}
+            onSubmit={handleSubmit}
+        >
+            {["Customer", "apellido", "Email", "Phone", "TaxId", "CustomCode", "Country", "HSCode"]
+                .map((field, index) => (
+                    <div className={styles.formField} key={index}>
+                        <label>
+                            {field === "Customer" && "Nombre*"}
+                            {field === "apellido" && "Apellido*"}
+                            {field === "Email" && "Correo"}
+                            {field === "Phone" && "Teléfono*"}
+                            {field === "TaxId" && "RFC*"}
+                            {field === "CustomCode" && "Tipo de aduana (opcional)"}
+                            {field === "Country" && "País de Origen (opcional)"}
+                            {field === "HSCode" && "Código Arancelario (opcional)"}
+                        </label>
+                        <input
+                            name={field}
+                            type={field === "Email" ? "email" : field === "Phone" ? "tel" : "text"}
+                            placeholder={
+                                field === "Customer" ? "Nombre" :
+                                    field === "apellido" ? "Apellido" :
+                                        field === "Email" ? "Correo" :
+                                            field === "Phone" ? "Teléfono" :
+                                                field === "TaxId" ? "RFC" :
+                                                    field === "CustomCode" ? "Tipo de Aduana" :
+                                                        field === "Country" ? "País de Origen" :
+                                                            "Código Arancelario"
+                            }
+                            value={formData[field as FormDataKeys]}
+                            onChange={handleChange}
+                            required={
+                                field === "Customer" ||
+                                field === "apellido" ||
+                                field === "Phone" ||
+                                field === "TaxId" ||
+                                field === "ServiceType" ||
+                                field === "PersonType"
+                            }
+                        />
+                    </div>
+                ))}
+            {["ServiceType", "PersonType"].map((type, index) => (
+                <div className={styles.formField} key={index}>
+                    <label>
+                        {
+                            type === "ServiceType" ?
+                                "Tipo de Servicio* (escoger una)" :
+                                "Tipo de Persona (escoger una)"
+                        }
+                    </label>
+                    <div className={styles.border}>
+                        {["importacion", "exportacion"].map((option) => (
+                            <label key={option}>
+                                <input
+                                    name={type}
+                                    type="radio"
+                                    value={option}
+                                    onChange={handleChange}
+                                />
+                                {option.charAt(0).toUpperCase() + option.slice(1)}
+                            </label>
+                        ))}
+                    </div>
+                </div>
+            ))}
+            <div className="back-and-continue-button">
+                <div className="secondary-button font-body" onClick={goBack}>Atrás</div>
+                <button className="primary-button font-body" type="submit">Continuar</button>
+            </div>
+        </form>
+    );
 
     return (
         <>
-            {isMobile ? (
+            {isMobile && (
                 <div className={styles.containerHeaderMessage}>
-                    <p className="font-body-bold">
-                        ¡Ya casi, 2 pasos más y terminamos!
-                    </p>
+                    <p className="font-body-bold">¡Ya casi, 2 pasos más y terminamos!</p>
                 </div>
-            ) : (
-                ""
             )}
             <div className={styles.container}>
-                {isMobile ? (
-                    <form
-                        className={styles.formContainerMbl}
-                        onSubmit={handleSubmit}
-                    >
-                        <div className={styles.formField}>
-                            <h2>Informacion requerida*</h2>
-                            <label>Nombre*</label>
-                            <input
-                                name="nombre"
-                                type="text"
-                                placeholder="Nombre"
-                                value={formData.nombre}
-                                onChange={handleChange}
-                                required
-                            />
+                <div className={styles.containerHeader}>
+                    <h2>Informacion requerida*</h2>
+                    {!isMobile && (
+                        <div className={styles.containerHeaderMessage}>
+                            <p className="font-body-bold">¡Ya casi, 2 pasos más y terminamos!</p>
                         </div>
-                        <div className={styles.formField}>
-                            <label>Apellido*</label>
-                            <input
-                                name="apellido"
-                                type="text"
-                                placeholder="Apellido"
-                                value={formData.apellido}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Correo</label>
-                            <input
-                                name="correo"
-                                type="email"
-                                placeholder="Correo"
-                                value={formData.correo}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Teléfono*</label>
-                            <input
-                                name="telefono"
-                                type="tel"
-                                placeholder="Teléfono"
-                                value={formData.telefono}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>RFC*</label>
-                            <input
-                                name="rfc"
-                                type="text"
-                                placeholder="RFC"
-                                value={formData.rfc}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Tipo de Servicio*</label>
-                            <input
-                                name="tipoDeServicio"
-                                type="text"
-                                placeholder="Importación o Exportación"
-                                value={formData.tipoDeServicio}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Tipo de Persona (opcional)</label>
-                            <input
-                                name="persona"
-                                type="text"
-                                placeholder="Moral o Física"
-                                value={formData.persona}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Tipo de aduana (opcional)</label>
-                            <input
-                                name="tipoDeAduana"
-                                type="text"
-                                placeholder="Tipo de Aduana"
-                                value={formData.tipoDeAduana}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>País de Origen (opcional)</label>
-                            <input
-                                name="origen"
-                                type="text"
-                                placeholder="País de Origen"
-                                value={formData.origen}
-                                onChange={handleChange}
-                            />
-                        </div>
-                        <div className={styles.formField}>
-                            <label>Código Arancelario (opcional)</label>
-                            <input
-                                name="codigo"
-                                type="text"
-                                placeholder="Código Arancelario"
-                                value={formData.codigo}
-                                onChange={handleChange}
-                            />
-                        </div>
-
-                        {/* Buttons */}
-                        <div className="back-and-continue-button">
-                            <div
-                                className="secondary-button font-body"
-                                onClick={goBack}
-                            >
-                                Atrás
-                            </div>
-                            <button
-                                className="primary-button font-body"
-                                type="submit"
-                            >
-                                Continuar
-                            </button>
-                        </div>
-                    </form>
-                ) : (
-                    <>
-                        <div className={styles.containerHeader}>
-                            <h2>Informacion requerida*</h2>
-                            <div className={styles.containerHeaderMessage}>
-                                <p className="font-body-bold">
-                                    ¡Ya casi, 2 pasos más y terminamos!
-                                </p>
-                            </div>
-                        </div>
-                        <form
-                            className={styles.formContainer}
-                            onSubmit={handleSubmit}
-                        >
-                            <div className={styles.formField}>
-                                <h2>Informacion requerida*</h2>
-                                <label>Nombre*</label>
-                                <input
-                                    name="nombre"
-                                    type="text"
-                                    placeholder="Nombre"
-                                    value={formData.nombre}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Apellido*</label>
-                                <input
-                                    name="apellido"
-                                    type="text"
-                                    placeholder="Apellido"
-                                    value={formData.apellido}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Correo</label>
-                                <input
-                                    name="correo"
-                                    type="email"
-                                    placeholder="Correo"
-                                    value={formData.correo}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Teléfono*</label>
-                                <input
-                                    name="telefono"
-                                    type="tel"
-                                    placeholder="Teléfono"
-                                    value={formData.telefono}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>RFC*</label>
-                                <input
-                                    name="rfc"
-                                    type="text"
-                                    placeholder="RFC"
-                                    value={formData.rfc}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Tipo de Servicio*</label>
-                                <input
-                                    name="tipoDeServicio"
-                                    type="text"
-                                    placeholder="Importación o Exportación"
-                                    value={formData.tipoDeServicio}
-                                    onChange={handleChange}
-                                    required
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Tipo de Persona (opcional)</label>
-                                <input
-                                    name="persona"
-                                    type="text"
-                                    placeholder="Moral o Física"
-                                    value={formData.persona}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Tipo de aduana (opcional)</label>
-                                <input
-                                    name="tipoDeAduana"
-                                    type="text"
-                                    placeholder="Tipo de Aduana"
-                                    value={formData.tipoDeAduana}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>País de Origen (opcional)</label>
-                                <input
-                                    name="origen"
-                                    type="text"
-                                    placeholder="País de Origen"
-                                    value={formData.origen}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                            <div className={styles.formField}>
-                                <label>Código Arancelario (opcional)</label>
-                                <input
-                                    name="codigo"
-                                    type="text"
-                                    placeholder="Código Arancelario"
-                                    value={formData.codigo}
-                                    onChange={handleChange}
-                                />
-                            </div>
-                        </form>
-                    </>
-                )}
+                    )}
+                </div>
+                {renderForm()}
             </div>
         </>
     );
-}
+};
 
 export default InformationPortal;

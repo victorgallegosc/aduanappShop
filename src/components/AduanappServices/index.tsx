@@ -7,7 +7,6 @@ const AduanappServices: React.FC = () => {
         <>
             <div className={styles.titleBackground}>
                 <div className={styles.titleContainer}>
-                    {/* Check font family */}
                     <p className={["font-title", styles.title].join(" ")}>
                         SERVICIOS ADUANAS
                     </p>
