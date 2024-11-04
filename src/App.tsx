@@ -15,6 +15,7 @@ import { BrowserRouter as Router, Route, Routes, useLocation } from "react-route
 import InformationPortal from "./components/InformationPortal/index";
 import { useEffect } from "react";
 import RFCPortal from "./components/RFCPortal";
+import ServiceInformationPortal from "./components/ServiceInformationPortal";
 
 const ScrollToTop: React.FC = () => {
     const { pathname } = useLocation();
@@ -35,13 +36,14 @@ const App: React.FC = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<AduanappServices />} />
-                        <Route
-                            path="/rfc-portal"
-                            element={<RFCPortal />}
-                        />
+                        <Route path="/rfc-portal" element={<RFCPortal />} />
                         <Route
                             path="/information-portal"
                             element={<InformationPortal />}
+                        />
+                        <Route
+                            path="/service-information-portal"
+                            element={<ServiceInformationPortal />}
                         />
                         <Route path="/details1" element={<Pack1Details />} />
                         <Route path="/details2" element={<Pack2Details />} />
