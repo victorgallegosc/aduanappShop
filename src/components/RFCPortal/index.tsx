@@ -2,14 +2,17 @@ import React, { useEffect, useState } from "react";
 import styles from "./RFCPortal.module.css";
 import { useNavigate } from "react-router-dom";
 
+interface RFCPortalProps {
+    url: string;
+}
 
-const RFCPortal: React.FC = () => {
+const RFCPortal: React.FC<RFCPortalProps> = () => {
     // Initial state for the form data
     const initialFormData = {
         rfc: "",
     };
 
-    const [formData, setFormData] = useState(initialFormData);
+    const [formData] = useState(initialFormData);
     const [isMobile, setIsMobile] = useState(false);
     const navigate = useNavigate();
 
