@@ -14,6 +14,7 @@ import Pack8Details from "./pages/PackDetails/pack8/pack8";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
 import InformationPortal from "./components/InformationPortal/index";
 import { useEffect } from "react";
+import RFCPortal from "./components/RFCPortal";
 
 const ScrollToTop: React.FC = () => {
     const { pathname } = useLocation();
@@ -34,6 +35,10 @@ const App: React.FC = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<AduanappServices />} />
+                        <Route
+                            path="/rfc-portal"
+                            element={<RFCPortal />}
+                        />
                         <Route
                             path="/information-portal"
                             element={<InformationPortal />}

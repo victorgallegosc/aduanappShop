@@ -11,7 +11,7 @@ const Pack1Details: React.FC = () => {
         navigate(-1);
     }
     const handleClick = () => {
-        navigate('/information-portal')
+        navigate('/rfc-portal')
     }
 
     // --- Tables data ---

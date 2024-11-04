@@ -135,10 +135,12 @@ const InformationPortal: React.FC = () => {
     );
 
     return (
-        <>
+        <div className={styles.mainContainer}>
             {isMobile && (
                 <div className={styles.containerHeaderMessage}>
-                    <p className="font-body-bold">¡Ya casi, 2 pasos más y terminamos!</p>
+                    <p className="font-body-bold">
+                        ¡Ya casi, 2 pasos más y terminamos!
+                    </p>
                 </div>
             )}
             <div className={styles.container}>
@@ -146,13 +148,15 @@ const InformationPortal: React.FC = () => {
                     <h2>Informacion requerida*</h2>
                     {!isMobile && (
                         <div className={styles.containerHeaderMessage}>
-                            <p className="font-body-bold">¡Ya casi, 2 pasos más y terminamos!</p>
+                            <p className="font-body-bold">
+                                ¡Ya casi, 2 pasos más y terminamos!
+                            </p>
                         </div>
                     )}
                 </div>
                 {renderForm()}
             </div>
-        </>
+        </div>
     );
 };
 
