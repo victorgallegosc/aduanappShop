@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styles from "./RFCPortal.module.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
-interface RFCPortalProps {
-    url: string;
-}
-
-const RFCPortal: React.FC<RFCPortalProps> = () => {
+const RFCPortal: React.FC = () => {
+    const location = useLocation();
+    const { url } = location.state || { url: "" };
+    
     // Initial state for the form data
     const initialFormData = {
         rfc: "",
@@ -28,6 +27,12 @@ const RFCPortal: React.FC<RFCPortalProps> = () => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         console.log("Form Data:", formData);
+
+        navigate("/service-information-portal", {
+            state: {
+                url: url,
+            },
+        });
     };
 
     // Navigate back to the previous page

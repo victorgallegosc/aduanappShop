@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
-interface CalendlyWidgetProps {
-    url: string;
-}
-
-const CalendlyWidget: React.FC<CalendlyWidgetProps> = ({ url }) => {
+const CalendlyWidget: React.FC = () => {
+    const location = useLocation();
+    const { url } = location.state || { url: "" };
+    
     useEffect(() => {
         const script = document.createElement("script");
         script.src = "https://assets.calendly.com/assets/external/widget.js";

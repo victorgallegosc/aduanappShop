@@ -16,6 +16,7 @@ import InformationPortal from "./components/InformationPortal/index";
 import { useEffect } from "react";
 import RFCPortal from "./components/RFCPortal";
 import ServiceInformationPortal from "./components/ServiceInformationPortal";
+import CalendlyWidget from "./components/CalendlyWidget";
 
 const ScrollToTop: React.FC = () => {
     const { pathname } = useLocation();
@@ -53,6 +54,7 @@ const App: React.FC = () => {
                         <Route path="/details6" element={<Pack6Details />} />
                         <Route path="/details7" element={<Pack7Details />} />
                         <Route path="/details8" element={<Pack8Details />} />
+                        <Route path="/schedule-meeting" element={<CalendlyWidget />} />
                     </Routes>
                 </main>
                 <Footer />

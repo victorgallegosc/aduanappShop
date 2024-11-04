@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./ServiceInformationPortal.module.css";
 
 // Define the keys for the form data type
@@ -14,6 +14,9 @@ const initialFormData = {
 };
 
 const ServiceInformationPortal: React.FC = () => {
+    const location = useLocation();
+    const { url } = location.state || { url: "" };
+    
     const [formData, setFormData] = useState(initialFormData);
     const [isMobile, setIsMobile] = useState(false);
     const navigate = useNavigate();
@@ -37,6 +40,11 @@ const ServiceInformationPortal: React.FC = () => {
         }
 
         console.log("Form Data:", formData);
+        navigate("/schedule-meeting", {
+            state: {
+                url: url,
+            },
+        });
     };
 
     // Navigate back to the previous page

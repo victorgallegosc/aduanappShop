@@ -9,8 +9,13 @@ const Pack7Details: React.FC = () => {
     const goBack = () => {
         navigate(-1);
     };
+    
     const handleClick = () => {
-        navigate("/information-portal");
+        navigate("/rfc-portal", {
+            state: {
+                url: "https://calendly.com/carrotibc/carrot-ibc-introduction",
+            },
+        });
     };
 
     // --- Tables data ---
