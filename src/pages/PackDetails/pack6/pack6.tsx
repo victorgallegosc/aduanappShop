@@ -10,7 +10,7 @@ const Pack6Details: React.FC = () => {
         navigate(-1);
     };
     const handleClick = () => {
-        navigate("/information-portal");
+        window.location.href = "https://buy.stripe.com/4gwcN89Aebe6fAsaEM";
     };
 
     // --- Tables data ---

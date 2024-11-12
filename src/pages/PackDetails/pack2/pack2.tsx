@@ -10,7 +10,7 @@ const Pack2Details: React.FC = () => {
         navigate(-1);
     };
     const handleClick = () => {
-        navigate("/information-portal");
+        window.location.href = "https://buy.stripe.com/cN26oK7s6dmecogfZ2";
     };
     
     // Breadcrumb
