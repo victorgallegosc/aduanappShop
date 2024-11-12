@@ -11,7 +11,7 @@ const Pack5Details: React.FC = () => {
     };
     
     const handleClick = () => {
-        navigate("/rfc-portal", {
+        navigate("/schedule-meeting", {
             state: {
                 url: "https://calendly.com/carrotibc/carrot-ibc-introduction",
             },

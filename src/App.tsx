@@ -12,10 +12,7 @@ import Pack6Details from "./pages/PackDetails/pack6/pack6";
 import Pack7Details from "./pages/PackDetails/pack7/pack7";
 import Pack8Details from "./pages/PackDetails/pack8/pack8";
 import { BrowserRouter as Router, Route, Routes, useLocation } from "react-router-dom";
-import InformationPortal from "./components/InformationPortal/index";
 import { useEffect } from "react";
-import RFCPortal from "./components/RFCPortal";
-import ServiceInformationPortal from "./components/ServiceInformationPortal";
 import CalendlyWidget from "./components/CalendlyWidget";
 
 const ScrollToTop: React.FC = () => {
@@ -37,15 +34,6 @@ const App: React.FC = () => {
                 <main>
                     <Routes>
                         <Route path="/" element={<AduanappServices />} />
-                        <Route path="/rfc-portal" element={<RFCPortal />} />
-                        <Route
-                            path="/information-portal"
-                            element={<InformationPortal />}
-                        />
-                        <Route
-                            path="/service-information-portal"
-                            element={<ServiceInformationPortal />}
-                        />
                         <Route path="/details1" element={<Pack1Details />} />
                         <Route path="/details2" element={<Pack2Details />} />
                         <Route path="/details3" element={<Pack3Details />} />
