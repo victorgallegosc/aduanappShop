@@ -13,7 +13,7 @@ const Pack7Details: React.FC = () => {
     const handleClick = () => {
         navigate("/schedule-meeting", {
             state: {
-                url: "https://calendly.com/carrotibc/carrot-ibc-introduction",
+                url: "https://calendly.com/d/cqcz-vcm-jsf/aduanapp-onboarding",
             },
         });
     };
