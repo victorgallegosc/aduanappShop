@@ -19,6 +19,10 @@
   color: #ffffff;
 }
 
+.logo {
+  cursor: pointer;
+}
+
 .contact {
   text-align: right;
 }

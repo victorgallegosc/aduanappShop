@@ -7,6 +7,14 @@ import BurgerMenu from "../BurgerMenu";
 const Header: React.FC = () => {
     const [isMobile, setIsMobile] = useState(false);
 
+    const handleMailTo = () => {
+        window.open("mailto:notificaciones@aduanapp.mx", "_blank");
+    };
+
+    const handleClickLogo = () => {
+        window.open("https://aduanapp.com/", "_blank");
+    };
+
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 480);
 
@@ -19,6 +27,7 @@ const Header: React.FC = () => {
     return (
         <header className={styles.header}>
             <img
+                onClick={handleClickLogo}
                 src={isMobile ? shortlogo : logo}
                 alt="Aduanapp Logo"
                 className={styles.logo}
@@ -28,8 +37,26 @@ const Header: React.FC = () => {
             ) : (
                 <div className={`${styles.contact} font-body-bold`}>
                     <p>MX</p>
-                    <p>+52 56 3836 3290</p>
-                    <p>notificaciones@aduanapp.mx</p>
+                    <p>
+                        <a 
+                            href="tel:+525638363290"
+                            style={{
+                                textDecoration: "none",
+                                color: "white",
+                                cursor: "pointer"
+                            }}
+                            >
+                                +52 56 3836 3290
+                            </a>
+                    </p>
+                    <p
+                        onClick={handleMailTo}
+                        style={{
+                            cursor: "pointer",
+                        }}
+                    >
+                        notificaciones@aduanapp.mx
+                    </p>
                 </div>
             )}
         </header>

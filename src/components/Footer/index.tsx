@@ -7,6 +7,18 @@ import arrowUp from "../../assets/icons/Upwards.png";
 const Footer: React.FC = () => {
     const scrollToTop = () => window.scrollTo(0, 0);
 
+    const handleTerms = () => {
+        window.open("https://aduanapp.com/terminos", "_blank");
+    };
+    
+    const handlePrivacy = () => {
+        window.open("https://aduanapp.com/privacidad", "_blank");
+    };
+
+    const handleLInkedIn = () => {
+        window.open("https://www.linkedin.com/company/aduanapp", "_blank");
+    };
+
     return (
         <div className={styles.footer}>
             <div className={styles.infoContainer}>
@@ -15,7 +27,7 @@ const Footer: React.FC = () => {
                     <p className="font-body" style={{ margin: "20px 0", lineHeight: "1.7" }}>
                         Estamos innovando para traer más transparencia al mundo de aduanas. Por aire, mar, y tierra.
                     </p>
-                    <img src={linkedin} alt="LinkedIn" style={{ width: "30px" }} />
+                    <img src={linkedin} alt="LinkedIn" style={{ width: "30px", cursor: "pointer" }} onClick={handleLInkedIn} />
                 </div>
 
                 <div className={styles.infoBlock}>
@@ -23,10 +35,10 @@ const Footer: React.FC = () => {
                         Quick Links
                     </p>
                     <div className={styles.line} />
-                    <p className="font-body" style={{ marginBottom: "15px" }}>
+                    <p className="font-body" style={{ marginBottom: "15px", cursor: "pointer" }} onClick={handleTerms}>
                         Términos y Condiciones
                     </p>
-                    <p className="font-body">Aviso de Privacidad</p>
+                    <p className="font-body" style={{cursor: "pointer"}} onClick={handlePrivacy}>Aviso de Privacidad</p>
                 </div>
 
                 <img

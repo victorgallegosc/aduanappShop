@@ -13,32 +13,65 @@ const FullScreenBurgerMenu: React.FC = () => {
         toggleMenu();
     };
 
+    const handleMailTo = () => {
+        window.open("mailto:notificaciones@aduanapp.mx", "_blank");
+    };
+
     return (
         <div>
             <div
-                className={`${styles.burgerIcon} ${isOpen ? styles.open : ''}`}
+                className={`${styles.burgerIcon} ${isOpen ? styles.open : ""}`}
                 onClick={toggleMenu}
             >
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
                 <div className={styles.line}></div>
             </div>
-            <div className={`${styles.menu} ${isOpen ? styles.open : ''}`}>
+            <div className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
                 <div className={styles.menuContent}>
                     <div>
-                        <div className={styles.closeButton} onClick={toggleMenu}>
+                        <div
+                            className={styles.closeButton}
+                            onClick={toggleMenu}
+                        >
                             &times;
                         </div>
                         <div className={styles.menuTabs}>
-                            <a href='http://www.aduanapp.com'>Home</a>
+                            <a href="http://www.aduanapp.com">Home</a>
                             <a onClick={goToShop}>Shop</a>
-                            <a style={{ borderBottom: "1px solid #ff9c7a", paddingBottom: "10px" }}>Contacto</a>
+                            <a
+                                onClick={handleMailTo}
+                                style={{
+                                    borderBottom: "1px solid #ff9c7a",
+                                    paddingBottom: "10px",
+                                }}
+                            >
+                                Contacto
+                            </a>
                         </div>
                     </div>
                     <div className={`${styles.contact} font-body-bold`}>
                         <p>MX</p>
-                        <p>+52 56 3836 3290</p>
-                        <p>notificaciones@aduanapp.mx</p>
+                        <p>
+                            <a
+                                href="tel:+525638363290"
+                                style={{
+                                    textDecoration: "none",
+                                    color: "white",
+                                    cursor: "pointer",
+                                }}
+                            >
+                                +52 56 3836 3290
+                            </a>
+                        </p>
+                        <p
+                            onClick={handleMailTo}
+                            style={{
+                                cursor: "pointer",
+                            }}
+                        >
+                            notificaciones@aduanapp.mx
+                        </p>
                     </div>
                 </div>
             </div>
